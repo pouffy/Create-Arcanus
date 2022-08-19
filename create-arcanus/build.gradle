@@ -69,10 +69,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'examplemod'
+            property 'forge.enabledGameTestNamespaces', 'create_arcanus'
 
             mods {
-                examplemod {
+                create_arcanus {
                     source sourceSets.main
                 }
             }
@@ -86,10 +86,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'examplemod'
+            property 'forge.enabledGameTestNamespaces', 'create_arcanus'
 
             mods {
-                examplemod {
+                create_arcanus {
                     source sourceSets.main
                 }
             }
@@ -114,10 +114,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'examplemod'
+            property 'forge.enabledGameTestNamespaces', 'create_arcanus'
 
             mods {
-                examplemod {
+                create_arcanus {
                     source sourceSets.main
                 }
             }
@@ -131,10 +131,10 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'create_arcanus', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                examplemod {
+                create_arcanus {
                     source sourceSets.main
                 }
             }
@@ -166,6 +166,9 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+    maven {
+        url = "https://www.cursemaven.com/"
+    }
     maven { // Registrate
         url "https://maven.tterrag.com/"
     }
@@ -198,7 +201,9 @@ dependencies {
     implementation fg.deobf("com.jozufozu.flywheel:Flywheel-Forge:${flywheel_version}")
 //    implementation fg.deobf("com.simibubi.create:create-1.18.2:${create_version}")
     implementation fg.deobf("com.simibubi.create:Create:${create_version}")
-
+// Forbidden & Arcanus
+    implementation fg.deobf("curse.maven:forbidden-arcanus-309858:3712899")
+    implementation fg.deobf("curse.maven:valhelsia-core-416935:3886212")
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
@@ -218,12 +223,12 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "examplemod",
-                "Specification-Vendor"    : "examplemodsareus",
+                "Specification-Title"     : "create_arcanus",
+                "Specification-Vendor"    : "create_arcanussareus",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "examplemodsareus",
+                "Implementation-Vendor"   : "create_arcanussareus",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
