@@ -4,10 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12a061fb-70f9-40f0-96c1-3e9b765b1fe4" name="Changes" comment="HAHA MORE STUFF">
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/data/create_arcanus/recipes/filling/wet_purifying_soap.json" afterDir="false" />
+    <list default="true" id="12a061fb-70f9-40f0-96c1-3e9b765b1fe4" name="Changes" comment="Forbidden &amp; Arcanus + test filling recipe">
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/content/AllBlocks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/alchemic_tablet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/arcane_tablet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/blank_tablet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/cracked_dark_tablet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/damaged_dark_tablet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/dark_tablet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/experienced_tablet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/incomplete_alchemic_tablet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/incomplete_arcane_tablet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/incomplete_pure_obsidian_tablet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/pure_obsidian_tablet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/pure_tablet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/runic_tablet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/shattered_dark_tablet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/create-arcanus.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/create-arcanus.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/create-arcanus.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/create-arcanus.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create-arcanus/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create-arcanus/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/CreateArcanus.java" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/CreateArcanus.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,24 +67,43 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.18.2-40.1.0_mapped_parchment_1.18.1-2022.03.06-1.18.2/forge-1.18.2-40.1.0_mapped_parchment_1.18.1-2022.03.06-1.18.2-sources.jar!/net/minecraftforge/event/RegistryEvent.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2DZIw345BfOhCIOLgtdnFGQgmza" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/pouff/Documents/GitHub/Create-Arcanus/create-arcanus/src/main/resources/assets/create_arcanus/textures/item&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\textures\item" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus" />
     </key>
@@ -113,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660903696461</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Forbidden &amp; Arcanus + test filling recipe">
+      <created>1660907189727</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1660907189727</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +175,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="HAHA MORE STUFF" />
-    <option name="LAST_COMMIT_MESSAGE" value="HAHA MORE STUFF" />
+    <MESSAGE value="Forbidden &amp; Arcanus + test filling recipe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Forbidden &amp; Arcanus + test filling recipe" />
   </component>
 </project>

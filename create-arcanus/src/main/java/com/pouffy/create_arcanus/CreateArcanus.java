@@ -1,6 +1,11 @@
 package com.pouffy.create_arcanus;
 
 import com.mojang.logging.LogUtils;
+import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.repack.registrate.util.nullness.NonNullSupplier;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -17,13 +22,14 @@ import org.slf4j.Logger;
 
 import java.util.stream.Collectors;
 
+
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("create_arcanus")
 public class CreateArcanus
 {
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
-
+    public static final String MODID = "create_arcanus";
     public CreateArcanus()
     {
         // Register the setup method for modloading
@@ -78,4 +84,5 @@ public class CreateArcanus
             LOGGER.info("HELLO from Register Block");
         }
     }
+
 }

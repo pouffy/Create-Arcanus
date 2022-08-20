@@ -198,9 +198,9 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}:${jei_version}:api")
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}:${jei_version}")
 
-    implementation fg.deobf("com.jozufozu.flywheel:Flywheel-Forge:${flywheel_version}")
+    implementation fg.deobf("curse.maven:flywheel-forge-486392:3871082")
 //    implementation fg.deobf("com.simibubi.create:create-1.18.2:${create_version}")
-    implementation fg.deobf("com.simibubi.create:Create:${create_version}")
+    implementation fg.deobf("curse.maven:create-328085:3872145")
 // Forbidden & Arcanus
     implementation fg.deobf("curse.maven:forbidden-arcanus-309858:3712899")
     implementation fg.deobf("curse.maven:valhelsia-core-416935:3886212")
