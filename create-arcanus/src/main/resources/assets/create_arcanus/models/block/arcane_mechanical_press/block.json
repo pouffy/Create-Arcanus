@@ -1,0 +1,62 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"5": "create_arcanus:arcane_mechanical_press_bottom",
+		"6": "create_arcanus:edelwood_gearbox",
+		"7": "create_arcanus:arcane_mechanical_press_top",
+		"8": "create_arcanus:arcane_mechanical_press_side"
+	},
+	"elements": [
+		{
+			"name": "Top",
+			"from": [0, 14, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 2], "texture": "#7"},
+				"east": {"uv": [0, 0, 16, 2], "texture": "#7"},
+				"south": {"uv": [0, 0, 16, 2], "texture": "#7"},
+				"west": {"uv": [0, 0, 16, 2], "texture": "#7"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#7"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#7"}
+			}
+		},
+		{
+			"name": "Core",
+			"from": [2, 4, 1],
+			"to": [14, 14, 15],
+			"faces": {
+				"north": {"uv": [2, 2, 14, 12], "texture": "#6"},
+				"south": {"uv": [2, 2, 14, 12], "texture": "#6"},
+				"down": {"uv": [2, 1, 14, 15], "texture": "#5"}
+			}
+		},
+		{
+			"name": "Side",
+			"from": [0, 2, 0],
+			"to": [2, 14, 16],
+			"faces": {
+				"north": {"uv": [14, 2, 16, 14], "texture": "#8"},
+				"east": {"uv": [0, 2, 16, 14], "texture": "#8"},
+				"south": {"uv": [0, 2, 2, 14], "texture": "#8"},
+				"west": {"uv": [0, 2, 16, 14], "texture": "#8"},
+				"up": {"uv": [0, 0, 0, 0], "texture": "#8"},
+				"down": {"uv": [0, 12, 16, 14], "rotation": 90, "texture": "#8"}
+			}
+		},
+		{
+			"name": "Side",
+			"from": [14, 2, 0],
+			"to": [16, 14, 16],
+			"faces": {
+				"north": {"uv": [0, 2, 2, 14], "texture": "#8"},
+				"east": {"uv": [0, 2, 16, 14], "texture": "#8"},
+				"south": {"uv": [14, 2, 16, 14], "texture": "#8"},
+				"west": {"uv": [0, 2, 16, 14], "texture": "#8"},
+				"up": {"uv": [0, 0, 0, 0], "texture": "#8"},
+				"down": {"uv": [0, 0, 16, 2], "rotation": 90, "texture": "#8"}
+			}
+		}
+	],
+	"name": "",
+	"title": ""
+}

@@ -1,8 +1,11 @@
 package com.pouffy.create_arcanus;
 
 import com.mojang.logging.LogUtils;
+import com.pouffy.create_arcanus.block.AllBlocks;
+import com.pouffy.create_arcanus.item.AllItems;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.repack.registrate.util.nullness.NonNullSupplier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -18,6 +21,8 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.openjdk.nashorn.internal.codegen.ApplySpecialization;
 import org.slf4j.Logger;
 
 import java.util.stream.Collectors;
@@ -27,11 +32,21 @@ import java.util.stream.Collectors;
 @Mod("create_arcanus")
 public class CreateArcanus
 {
+
+
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     public static final String MODID = "create_arcanus";
+    public static final NonNullSupplier<CreateRegistrate> REGISTRATE = CreateRegistrate.lazy(MODID);
+    public static final CreativeModeTab BASE_CREATIVE_TAB = new CreativeModeTab("createarcanustab"){
+        @Override
+        @NonNull
+        public ItemStack makeIcon(){
+            return new ItemStack(Items.IRON_BLOCK);
+        }};
     public CreateArcanus()
     {
+
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -41,8 +56,9 @@ public class CreateArcanus
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        AllItems.register();
+        AllBlocks.register();
     }
-
     private void setup(final FMLCommonSetupEvent event)
     {
         // some preinit code
@@ -53,7 +69,7 @@ public class CreateArcanus
     private void enqueueIMC(final InterModEnqueueEvent event)
     {
         // Some example code to dispatch IMC to another mod
-        InterModComms.sendTo("examplemod", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
+        InterModComms.sendTo("create_arcanus", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
     }
 
     private void processIMC(final InterModProcessEvent event)
@@ -84,5 +100,10 @@ public class CreateArcanus
             LOGGER.info("HELLO from Register Block");
         }
     }
-
+    public static CreateRegistrate registrate() {
+        return REGISTRATE.get();
+    }
+    public static ResourceLocation asResource(String path) {
+        return new ResourceLocation(MODID, path);
+    }
 }
