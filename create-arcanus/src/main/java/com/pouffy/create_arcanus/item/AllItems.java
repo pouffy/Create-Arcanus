@@ -11,7 +11,12 @@ public class AllItems {
 
     public static final ItemEntry<Item> DARKSTONE_ALLOY = REGISTRATE.item("darkstone_alloy", Item::new)
             .properties(p->p.tab(CreateArcanus.BASE_CREATIVE_TAB))
-            .lang("Darkstone Alloy")
+            .register();
+    public static final ItemEntry<Item> POLISHED_DARK_RUNE = REGISTRATE.item("polished_dark_rune", Item::new)
+            .properties(p->p.tab(CreateArcanus.BASE_CREATIVE_TAB))
+            .register();
+    public static final ItemEntry<Item> POLISHED_RUNE = REGISTRATE.item("polished_rune", Item::new)
+            .properties(p->p.tab(CreateArcanus.BASE_CREATIVE_TAB))
             .register();
     public static void register() {}
 }

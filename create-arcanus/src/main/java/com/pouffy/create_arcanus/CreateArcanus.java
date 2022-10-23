@@ -9,10 +9,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
@@ -58,6 +60,7 @@ public class CreateArcanus
         MinecraftForge.EVENT_BUS.register(this);
         AllItems.register();
         AllBlocks.register();
+       // AllRecipes.register((RegistryEvent.Register<RecipeSerializer<?>>) modEventBus);
     }
     private void setup(final FMLCommonSetupEvent event)
     {
