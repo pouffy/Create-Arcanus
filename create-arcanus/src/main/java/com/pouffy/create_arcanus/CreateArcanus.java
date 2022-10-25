@@ -1,20 +1,18 @@
 package com.pouffy.create_arcanus;
 
 import com.mojang.logging.LogUtils;
-import com.pouffy.create_arcanus.block.AllBlocks;
-import com.pouffy.create_arcanus.item.AllItems;
+import com.pouffy.create_arcanus.registry.AllBlocks;
+import com.pouffy.create_arcanus.registry.AllItems;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.repack.registrate.util.nullness.NonNullSupplier;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
@@ -24,7 +22,6 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.checkerframework.checker.nullness.qual.NonNull;
-import org.openjdk.nashorn.internal.codegen.ApplySpecialization;
 import org.slf4j.Logger;
 
 import java.util.stream.Collectors;
@@ -44,7 +41,7 @@ public class CreateArcanus
         @Override
         @NonNull
         public ItemStack makeIcon(){
-            return new ItemStack(Items.IRON_BLOCK);
+            return new ItemStack(AllItems.DARK_SOUL_QUARTZ.get());
         }};
     public CreateArcanus()
     {

@@ -5,49 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12a061fb-70f9-40f0-96c1-3e9b765b1fe4" name="Changes" comment="actually functional unlike my family">
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/blockstates/dark_runic_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/blockstates/runic_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/blockstates/small_dark_runic_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/blockstates/small_runic_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/lang/en_us.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/dark_runic_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/runic_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/small_dark_runic_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/small_runic_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/dark_runic_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/polished_dark_rune.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/polished_rune.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/runic_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/small_dark_runic_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/small_runic_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/soapy_water_bucket.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/block/arcane_crystal_tiles.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/block/arcane_gold_sheet_metal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/block/dark_runic_tiles.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/block/darkstone_small_bricks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/block/processed_obsidian_tiles.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/block/runic_tiles.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/block/small_arcane_crystal_tiles.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/block/small_dark_runic_tiles.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/block/small_processed_obsidian_tiles.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/block/small_runic_tiles.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/fluid/soapy_water_flow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/fluid/soapy_water_flow.png.mcmeta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/fluid/soapy_water_still.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/fluid/soapy_water_still.png.mcmeta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/polished_dark_rune.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/polished_rune.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/soapy_water_bucket.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/block/ArcanusEncasedShaftBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/client/ClientSetup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/item/DarkSoulQuartzItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/item/MagikFloatyThingItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/item/SoulQuartzItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/registry/AllTileEntities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/blockstates/arcane_crystal_tiles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/blockstates/processed_obsidian_tiles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/blockstates/small_arcane_crystal_tiles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/blockstates/small_processed_obsidian_tiles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/arcane_crystal_tiles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/processed_obsidian_tiles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/small_arcane_crystal_tiles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/small_processed_obsidian_tiles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/arcane_crystal_tiles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/dark_soul_quartz.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/polished_dark_soul_quartz.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/polished_soul_quartz.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/processed_obsidian_tiles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/small_arcane_crystal_tiles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/small_processed_obsidian_tiles.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/soul_quartz.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/dark_soul_quartz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/polished_dark_soul_quartz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/polished_soul_quartz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/soul_quartz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/data/create_arcanus/recipes/sandpaper_polishing/dark_soul_quartz.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/data/create_arcanus/recipes/sandpaper_polishing/soul_quartz.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/data/forbidden_arcanus/hephaestus_forge/rituals/dark_soul_quartz.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/data/forbidden_arcanus/hephaestus_forge/rituals/soul_quartz.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-arcanus/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/CreateArcanus.java" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/CreateArcanus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/block/AllBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/block/AllBlocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/item/AllItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/item/AllItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/blockstates/arcane_mechanical_press.json" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/blockstates/arcane_press.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/arcane_mechanical_press/block.json" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/arcane_press/block.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/arcane_mechanical_press/head.json" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/arcane_press/head.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/arcane_mechanical_press/item.json" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/arcane_press/item.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/edelwood_encased_shaft.json" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/edelwood_encased_shaft.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/block/AllBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/registry/AllBlocks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/block/BonusEncasedShaftBlock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/item/AllItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/registry/AllItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/lang/en_us.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,23 +107,24 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/pouff/Documents/GitHub/Create-Arcanus/create-arcanus/src/main/resources/assets/create_arcanus/textures/item&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/pouff/Documents/GitHub/Create-Arcanus/create-arcanus/src/main/resources/assets/create_arcanus/models/item",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\textures\item" />
-      <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\textures\fluid" />
+      <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\models\item" />
+      <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\blockstates" />
+      <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\models\block" />
       <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\textures\block" />
-      <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\models\block\arcane_mechanical_press" />
+      <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\textures\item" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\textures\gui" />

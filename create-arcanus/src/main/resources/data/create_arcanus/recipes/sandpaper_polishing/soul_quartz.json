@@ -1,0 +1,13 @@
+{
+  "type": "create:sandpaper_polishing",
+  "ingredients": [
+    {
+      "item": "create_arcanus:soul_quartz"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_arcanus:polished_soul_quartz"
+    }
+  ]
+}
