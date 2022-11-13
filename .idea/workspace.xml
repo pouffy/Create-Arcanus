@@ -4,42 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12a061fb-70f9-40f0-96c1-3e9b765b1fe4" name="Changes" comment="actually functional unlike my family">
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/block/ArcanusEncasedShaftBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/client/ClientSetup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/item/DarkSoulQuartzItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/item/MagikFloatyThingItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/item/SoulQuartzItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/registry/AllTileEntities.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/blockstates/arcane_crystal_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/blockstates/processed_obsidian_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/blockstates/small_arcane_crystal_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/blockstates/small_processed_obsidian_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/arcane_crystal_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/processed_obsidian_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/small_arcane_crystal_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/small_processed_obsidian_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/arcane_crystal_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/dark_soul_quartz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/polished_dark_soul_quartz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/polished_soul_quartz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/processed_obsidian_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/small_arcane_crystal_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/small_processed_obsidian_tiles.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/soul_quartz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/dark_soul_quartz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/polished_dark_soul_quartz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/polished_soul_quartz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/item/soul_quartz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/data/create_arcanus/recipes/sandpaper_polishing/dark_soul_quartz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/data/create_arcanus/recipes/sandpaper_polishing/soul_quartz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/data/forbidden_arcanus/hephaestus_forge/rituals/dark_soul_quartz.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/data/forbidden_arcanus/hephaestus_forge/rituals/soul_quartz.json" afterDir="false" />
+    <list default="true" id="12a061fb-70f9-40f0-96c1-3e9b765b1fe4" name="Changes" comment="soul quartz and finished tiles">
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/CreateArcanusClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/content/contraptions/components/converter/ConverterBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/content/contraptions/components/converter/ConverterInstance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/content/contraptions/components/converter/ConverterRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/content/contraptions/components/converter/ConverterTileEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/content/contraptions/components/converter/recipe/ConvertingRecipe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/content/contraptions/components/converter/recipe/ConvertingRecipeType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/registry/AllSoundEvents.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/registry/AllTablets.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/registry/BlockPartials.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/registry/RecipeTypes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/blockstates/converter.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/converter/block_.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/converter/head.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/converter/item.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/block/darkstone_cogwheel_shaftless.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/alchemic_tablet.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/arcane_tablet.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/blank_tablet.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/models/item/converter.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/block/converter_head.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/block/converter_side.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/textures/block/darkstone_cogwheel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/data/create_arcanus/recipes/converting/conversion_test.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/CreateArcanus.java" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/CreateArcanus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/block/AllBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/registry/AllBlocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/block/BonusEncasedShaftBlock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/item/AllItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/registry/AllItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/client/ClientSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/client/ClientSetup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/registry/AllBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/registry/AllBlocks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/registry/AllTileEntities.java" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/java/com/pouffy/create_arcanus/registry/AllTileEntities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/create-arcanus/src/main/resources/assets/create_arcanus/lang/en_us.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +41,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$/create-arcanus">
       <ProjectState />
@@ -113,22 +108,25 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/pouff/Documents/GitHub/Create-Arcanus/create-arcanus/src/main/resources/assets/create_arcanus/models/item",
+    "last_opened_file_path": "C:/Users/pouff/Documents/GitHub/Create-Arcanus/create-arcanus/src/main/resources/assets/create_arcanus/blockstates",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\models\item" />
       <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\blockstates" />
-      <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\models\block" />
+      <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\models\block\converter" />
       <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\textures\block" />
-      <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\textures\item" />
+      <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\models\item" />
+      <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\models\block" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus\src\main\resources\assets\create_arcanus\textures\gui" />
       <recent name="C:\Users\pouff\Documents\GitHub\Create-Arcanus\create-arcanus" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.pouffy.create_arcanus.content.contraptions.components.converter" />
     </key>
   </component>
   <component name="RunManager">
@@ -196,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664371127856</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="soul quartz and finished tiles">
+      <created>1666734210556</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666734210556</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,6 +221,7 @@
     <MESSAGE value="Forbidden &amp; Arcanus + test filling recipe" />
     <MESSAGE value="textures and broken shit" />
     <MESSAGE value="actually functional unlike my family" />
-    <option name="LAST_COMMIT_MESSAGE" value="actually functional unlike my family" />
+    <MESSAGE value="soul quartz and finished tiles" />
+    <option name="LAST_COMMIT_MESSAGE" value="soul quartz and finished tiles" />
   </component>
 </project>

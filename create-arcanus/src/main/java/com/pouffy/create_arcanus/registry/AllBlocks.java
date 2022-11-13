@@ -3,13 +3,14 @@ package com.pouffy.create_arcanus.registry;
 import com.pouffy.create_arcanus.CreateArcanus;
 import com.pouffy.create_arcanus.MoreSpriteShifts;
 import com.pouffy.create_arcanus.block.ArcanusEncasedShaftBlock;
+import com.pouffy.create_arcanus.content.contraptions.components.converter.ConverterBlock;
 import com.simibubi.create.content.contraptions.base.CasingBlock;
+import com.simibubi.create.content.contraptions.components.AssemblyOperatorBlockItem;
 import com.simibubi.create.content.contraptions.relays.encased.EncasedShaftBlock;
-import com.simibubi.create.foundation.data.BuilderTransformers;
-import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.foundation.block.BlockStressDefaults;
+import com.simibubi.create.foundation.data.*;
 import com.simibubi.create.repack.registrate.util.entry.BlockEntry;
-import com.simibubi.create.repack.registrate.util.nullness.NonNullSupplier;
-import com.stal111.forbidden_arcanus.core.init.ModBlocks;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -22,6 +23,7 @@ import static com.simibubi.create.foundation.data.ModelGen.customItemModel;
 public class AllBlocks {
     private static final CreateRegistrate REGISTRATE = CreateArcanus.registrate()
             .creativeModeTab(() -> CreateArcanus.BASE_CREATIVE_TAB);
+
 
     public static final BlockEntry<Block> DARK_RUNIC_TILES = REGISTRATE.block("dark_runic_tiles", Block::new)
             .initialProperties(() -> Blocks.DEEPSLATE)
@@ -110,6 +112,14 @@ public class AllBlocks {
                     .transform(axeOrPickaxe())
                     .register();
 
-
+    public static final BlockEntry<ConverterBlock> CONVERTER = REGISTRATE.block("converter", ConverterBlock::new)
+            .initialProperties(SharedProperties::softMetal)
+            .blockstate(BlockStateGen.horizontalBlockProvider(true))
+            .transform(pickaxeOnly())
+            .properties(BlockBehaviour.Properties::noOcclusion)
+            .item()
+            .build()
+            .transform(BlockStressDefaults.setImpact(8))
+            .register();
     public static void register() {}
 }

@@ -1,6 +1,9 @@
 package com.pouffy.create_arcanus.registry;
 
 import com.pouffy.create_arcanus.CreateArcanus;
+import com.pouffy.create_arcanus.content.contraptions.components.converter.ConverterInstance;
+import com.pouffy.create_arcanus.content.contraptions.components.converter.ConverterRenderer;
+import com.pouffy.create_arcanus.content.contraptions.components.converter.ConverterTileEntity;
 import com.simibubi.create.content.contraptions.base.KineticTileEntity;
 import com.simibubi.create.content.contraptions.relays.encased.ShaftInstance;
 import com.simibubi.create.content.contraptions.relays.encased.ShaftRenderer;
@@ -18,6 +21,12 @@ public class AllTileEntities {
             .instance(()-> ShaftInstance::new, false)
             .validBlocks(AllBlocks.EDELWOOD_ENCASED_SHAFT)
             .renderer(()-> ShaftRenderer::new)
+            .register();
+    public static final BlockEntityEntry<ConverterTileEntity> CONVERTER_TILE_ENTITY = REGISTRATE
+            .tileEntity("converter", ConverterTileEntity::new)
+            .instance(() -> ConverterInstance::new, false)
+            .validBlocks(AllBlocks.CONVERTER)
+            .renderer(() -> ConverterRenderer::new)
             .register();
     public static void register() {}
 }

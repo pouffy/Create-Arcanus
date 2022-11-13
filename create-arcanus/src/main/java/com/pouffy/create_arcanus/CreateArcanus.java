@@ -1,19 +1,23 @@
 package com.pouffy.create_arcanus;
 
 import com.mojang.logging.LogUtils;
-import com.pouffy.create_arcanus.registry.AllBlocks;
-import com.pouffy.create_arcanus.registry.AllItems;
+import com.pouffy.create_arcanus.client.ClientSetup;
+import com.pouffy.create_arcanus.registry.*;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.repack.registrate.util.nullness.NonNullSupplier;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -21,6 +25,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.slf4j.Logger;
 
@@ -45,7 +50,7 @@ public class CreateArcanus
         }};
     public CreateArcanus()
     {
-
+        DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> CreateArcanusClient::new);
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -54,10 +59,17 @@ public class CreateArcanus
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
 
         // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
+        IEventBus modEventBus = FMLJavaModLoadingContext.get()
+                .getModEventBus();
+        modEventBus.addListener(ClientSetup::init);
+        IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
         AllItems.register();
         AllBlocks.register();
-       // AllRecipes.register((RegistryEvent.Register<RecipeSerializer<?>>) modEventBus);
+        AllTablets.register();
+        AllTileEntities.register();
+        AllSoundEvents.prepare();
+        RecipeTypes.register(modEventBus);
+        // AllRecipes.register((RegistryEvent.Register<RecipeSerializer<?>>) modEventBus);
     }
     private void setup(final FMLCommonSetupEvent event)
     {
