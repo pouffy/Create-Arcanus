@@ -32,34 +32,14 @@ public enum RecipeTypes implements IRecipeTypeInfo {
 
     RecipeTypes(Supplier<RecipeSerializer<?>> serializerSupplier) {
         String name = Lang.asId(name());
-        id = Create.asResource(name);
+        id = CreateArcanus.asResource(name);
         serializerObject = RecipeTypes.Registers.SERIALIZER_REGISTER.register(name, serializerSupplier);
         typeObject = RecipeTypes.Registers.TYPE_REGISTER.register(name, () -> simpleType(id));
         type = typeObject;
     }
 
-    RecipeTypes(ProcessingRecipeBuilder.ProcessingRecipeFactory<?> processingFactory) {
+      RecipeTypes(ProcessingRecipeBuilder.ProcessingRecipeFactory<?> processingFactory) {
         this(() -> new ProcessingRecipeSerializer<>(processingFactory));
-    }
-
-    public static <T extends Recipe<?>> RecipeType<T> simpleType(ResourceLocation id) {
-        String stringId = id.toString();
-        return new RecipeType<>() {
-            @Override
-            public String toString() {
-                return stringId;
-            }
-        };
-    }
-
-    public static void register(IEventBus modEventBus) {
-        ShapedRecipe.setCraftingSize(9, 9);
-        RecipeTypes.Registers.SERIALIZER_REGISTER.register(modEventBus);
-        RecipeTypes.Registers.TYPE_REGISTER.register(modEventBus);
-    }
-
-    public <C extends Container, T extends Recipe<C>> Optional<T> find(C inv, Level world) {
-        return world.getRecipeManager().getRecipeFor(this.getType(), inv, world);
     }
 
     @Override
@@ -80,7 +60,23 @@ public enum RecipeTypes implements IRecipeTypeInfo {
     }
 
     private static class Registers {
-        private static final DeferredRegister<RecipeSerializer<?>> SERIALIZER_REGISTER = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, CreateArcanus.MODID);
-        private static final DeferredRegister<RecipeType<?>> TYPE_REGISTER = DeferredRegister.create(Registry.RECIPE_TYPE_REGISTRY, CreateArcanus.MODID);
+        private static final DeferredRegister<RecipeSerializer<?>> SERIALIZER_REGISTER = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, CreateArcanus.MOD_ID);
+        private static final DeferredRegister<RecipeType<?>> TYPE_REGISTER = DeferredRegister.create(Registry.RECIPE_TYPE_REGISTRY, CreateArcanus.MOD_ID);
+    }
+
+    public static <T extends Recipe<?>> RecipeType<T> simpleType(ResourceLocation id) {
+        String stringId = id.toString();
+        return new RecipeType<>() {
+            @Override
+            public String toString() {
+                return stringId;
+            }
+        };
+    }
+
+    public static void register(IEventBus modEventBus) {
+        ShapedRecipe.setCraftingSize(9, 9);
+        RecipeTypes.Registers.SERIALIZER_REGISTER.register(modEventBus);
+        RecipeTypes.Registers.TYPE_REGISTER.register(modEventBus);
     }
 }
