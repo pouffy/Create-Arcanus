@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "create_arcanus:arcane_gold_casing"
+    },
+    "title": {
+      "translate": "advancement.arcanus.root"
+    },
+    "description": {
+      "color": "#F48EBA",
+      "translate": "advancement.arcanus.root.desc"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "create_arcanus:textures/block/small_runic_tiles.png"
+  },
+  "criteria": {
+    "0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {}
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ]
+}

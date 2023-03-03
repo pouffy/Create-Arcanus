@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "CGC",
+    "SAS"
+  ],
+  "key": {
+    "C": {
+      "item": "forbidden_arcanus:cloth"
+    },
+    "S": {
+      "item": "create_arcanus:arcane_gold_sheet"
+    },
+    "A": {
+      "item": "forbidden_arcanus:spectral_eye_amulet"
+    },
+    "G": {
+      "item": "create:goggles"
+    }
+  },
+  "result": {
+    "item": "create_arcanus:spectral_goggles"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "create_arcanus:root",
+  "display": {
+    "icon": {
+      "item": "create_arcanus:spectral_goggles"
+    },
+    "title": {
+      "translate": "advancement.arcanus.goggles"
+    },
+    "description": {
+      "color": "#F48EBA",
+      "translate": "advancement.arcanus.goggles.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create_arcanus:spectral_goggles"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ]
+}

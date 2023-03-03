@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/arcane_gold"
+    }
+  ],
+  "results": [
+    {
+      "item": "create_arcanus:arcane_gold_sheet"
+    }
+  ]
+}

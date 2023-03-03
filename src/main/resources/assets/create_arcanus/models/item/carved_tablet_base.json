@@ -1,0 +1,7 @@
+{
+    "parent": "forge:item/default",
+    "textures": {
+        "base": "create_arcanus:item/carved_tablet",
+        "fluid": "create_arcanus:item/mask/carved_tablet_base"
+    }
+}

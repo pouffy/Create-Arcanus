@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "forge:plates/arcane_gold"
+  },
+  "result": "create_arcanus:arcane_gold_ladder",
+  "count": 2
+}
