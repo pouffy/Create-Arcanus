@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "forbidden_arcanus:arcane_crystal"
-  },
-  "result": "create_arcanus:arcane_crystal_tiles",
-  "count": 2
-}

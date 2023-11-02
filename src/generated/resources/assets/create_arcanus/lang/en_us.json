@@ -1,0 +1,9 @@
+{
+  "item.create_arcanus.spectral_goggles": "Spectral Goggles",
+  "item.create_arcanus.spectral_goggles.tooltip": "GOGGLES",
+  "item.create_arcanus.spectral_goggles.tooltip.behaviour1": "Imbues your vision with _Arcane Sight_. Creatures all around you glow with their _Aura_.",
+  "item.create_arcanus.spectral_goggles.tooltip.behaviour2": "_Kinetic components_ show added _Stress Impact_ or _Capacity_. _Stressometers_ show statistics of their _attached kinetic network_. Some other blocks reveal information such as item and fluid content.",
+  "item.create_arcanus.spectral_goggles.tooltip.condition1": "When worn",
+  "item.create_arcanus.spectral_goggles.tooltip.condition2": "When looking at blocks",
+  "item.create_arcanus.spectral_goggles.tooltip.summary": "Augments your HUD with _miscellaneous information_ about placed components. May also include some _Side Effects_"
+}

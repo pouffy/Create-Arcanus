@@ -1,75 +1,39 @@
-buildscript {
-    repositories {
-        // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
-        maven { url = 'https://maven.minecraftforge.net' }
-        mavenCentral()
-        maven { url = 'https://repo.spongepowered.org/repository/maven-public' }
-        maven { url = 'https://maven.parchmentmc.org' }
-    }
-    dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-        classpath "org.spongepowered:mixingradle:0.7-SNAPSHOT"
-        classpath 'org.parchmentmc:librarian:1.+'
-    }
-}
-// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 plugins {
-    id 'eclipse'
+    id 'idea'
+    id 'net.minecraftforge.gradle'
+    id 'org.spongepowered.mixin'
+    id 'org.parchmentmc.librarian.forgegradle'
     id 'maven-publish'
-    id 'com.github.johnrengelman.shadow' version '5.2.0'
+    id "me.modmuss50.mod-publish-plugin" version "0.3.5"
 }
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.parchmentmc.librarian.forgegradle'
-apply plugin: 'org.spongepowered.mixin'
 
+version = mod_version
+group = mod_group_id
 
-version = "1.0"
-group = "com.pouffy.create_arcanus" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "create_arcanus"
+base {
+    archivesName = mod_id
+}
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
 minecraft {
-    // The mappings can be changed at any time and must be in the following format.
-    // Channel:   Version:
-    // official   MCVersion             Official field/method names from Mojang mapping files
-    // parchment  YYYY.MM.DD-MCVersion  Open community-sourced parameter names and javadocs layered on top of official
-    //
-    // You must be aware of the Mojang license when using the 'official' or 'parchment' mappings.
-    // See more information here: https://github.com/MinecraftForge/MCPConfig/blob/master/Mojang.md
-    //
-    // Parchment is an unofficial project maintained by ParchmentMC, separate from MinecraftForge
-    // Additional setup is needed to use their mappings: https://github.com/ParchmentMC/Parchment/wiki/Getting-Started
-    //
-    // Use non-default mappings at your own risk. They may not always work.
-    // Simply re-run your setup task after changing the mappings to update your workspace.
-    // mappings channel: 'official', version: '1.18.2'
-    mappings channel: 'parchment', version: '1.18.1-2022.03.06-1.18.2'
+    mappings channel: 'parchment', version: "${parchment_version}-${minecraft_version}"
+    copyIdeResources = true
+     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
-
-    // Default run configurations.
-    // These can be tweaked, removed, or duplicated as needed.
     runs {
         client {
             workingDirectory project.file('run')
 
             // Recommended logging data for a userdev environment
-            // The markers can be added/remove as needed separated by commas.
-            // "SCAN": For mods scan.
-            // "REGISTRIES": For firing of registry events.
-            // "REGISTRYDUMP": For getting the contents of all registries.
             property 'forge.logging.markers', 'REGISTRIES'
 
             // Recommended logging level for the console
-            // You can set various levels here.
-            // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
             property 'forge.logging.console.level', 'debug'
 
-            // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'create_arcanus'
+            arg "-mixin.config=create_arcanus.mixins.json"
 
             mods {
                 create_arcanus {
@@ -81,40 +45,13 @@ minecraft {
         server {
             workingDirectory project.file('run')
 
-            property 'forge.logging.markers', 'REGISTRIES'
-
-            property 'forge.logging.console.level', 'debug'
-
-            // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'create_arcanus'
-
-            mods {
-                create_arcanus {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        // This run config launches GameTestServer and runs all registered gametests, then exits.
-        // By default, the server will crash when no gametests are provided.
-        // The gametest system is also enabled by default for other run configs under the /test command.
-        gameTestServer {
-            workingDirectory project.file('run')
-
             // Recommended logging data for a userdev environment
-            // The markers can be added/remove as needed separated by commas.
-            // "SCAN": For mods scan.
-            // "REGISTRIES": For firing of registry events.
-            // "REGISTRYDUMP": For getting the contents of all registries.
             property 'forge.logging.markers', 'REGISTRIES'
 
             // Recommended logging level for the console
-            // You can set various levels here.
-            // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
             property 'forge.logging.console.level', 'debug'
 
-            // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'create_arcanus'
+            arg "-mixin.config=create_arcanus.mixins.json"
 
             mods {
                 create_arcanus {
@@ -126,12 +63,16 @@ minecraft {
         data {
             workingDirectory project.file('run')
 
+            // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'REGISTRIES'
 
+            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
 
-            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'create_arcanus', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'create_arcanus', '--all',
+                    '--output', file('src/generated/resources/'),
+                    '--existing', file('src/main/resources/').toString(),
+                    '--existing', file('src/generated/resources').toString()
 
             mods {
                 create_arcanus {
@@ -142,38 +83,20 @@ minecraft {
     }
 }
 
-configurations {
-    shade
-}
-
-shadowJar {
-    configurations = [project.configurations.shade]
-    relocate 'com.tterrag.registrate', "com.pouffy.create_arcanus.registrate"
-}
-
-reobf {
-    shadowJar {}
-}
-
-// Include resources generated by data generators.
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    // Put repositories for dependencies here
-    // ForgeGradle automatically adds the Forge maven and Maven Central for you
-
-    // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
-    // flatDir {
-    //     dir 'libs'
-    // }
+    mavenLocal()
     maven {
-        url = "https://www.cursemaven.com/"
-    }
-    maven { // Registrate
-        url "https://maven.tterrag.com/"
+        name = "Tterrag Maven"
+        url = "https://maven.tterrag.com/"
     }
     maven {
-        //location of the maven for curios api
+        name = "Blamejared Maven"
+        url = "https://maven.blamejared.com"
+    }
+    maven {
+        name = "TheIllusiveC4 Maven"
         url = "https://maven.theillusivec4.top/"
     }
     maven {
@@ -182,73 +105,90 @@ repositories {
     }
     maven {
         name = "ModMaven"
-        url = "https://modmaven.dev"
+        url = "https://modmaven.k-4u.nl"
     }
-    mavenLocal()
+    maven {
+        url = "https://www.cursemaven.com/"
+    }
+    flatDir {
+        dir 'libs'
+    }
 }
 
 dependencies {
-    // Specify the version of Minecraft to use. If this is any group other than 'net.minecraft', it is assumed
-    // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
-    // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    // minecraft 'net.minecraftforge:forge:1.18.2-40.1.0'
-
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    def registrate = "com.tterrag.registrate:Registrate:MC${minecraft_version}-${registrate_version}"
-    implementation fg.deobf(registrate)
-    shade registrate
 
-    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}:${jei_version}:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}:${jei_version}")
+    implementation fg.deobf("com.simibubi.create:create-${create_minecraft_version}:${create_version}-${create_version_build}:slim") { transitive = false }
+    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
+    implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
 
-    implementation fg.deobf("curse.maven:create-328085:3872145")
-    implementation fg.deobf("curse.maven:flywheel-forge-486392:3871082")
-//    implementation fg.deobf("com.simibubi.create:create-1.18.2:${create_version}")
-// Forbidden & Arcanus
-    implementation fg.deobf("curse.maven:forbidden-arcanus-309858:3712899")
-    implementation fg.deobf("curse.maven:valhelsia-core-416935:3886212")
-    implementation fg.deobf("top.theillusivec4.curios:curios-forge:1.18.2-5.0.7.1")
-    implementation fg.deobf("top.theillusivec4.curios:curios-forge:1.18.2-5.0.7.1:api")
-    // Real mod deobf dependency examples - these get remapped to your current mappings
-    // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
-    // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}") // Adds the full JEI mod as a runtime dependency
-    // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
+    implementation fg.deobf("curse.maven:forbidden-arcanus-${forbidden_arcanus_id}:${forbidden_arcanus_version}")
+    implementation fg.deobf("curse.maven:valhelsia-core-${valhelsia_core_id}:${valhelsia_core_version}")
 
-    // Examples using mod jars from ./libs
-    // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${jei_minecraft_version}-common-api:${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${jei_minecraft_version}-forge-api:${jei_version}")
+    implementation fg.deobf("mezz.jei:jei-${jei_minecraft_version}-forge:${jei_version}")
 
-    // For more info...
+    //compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_minecraft_version}-${curios_version}:api")
+    //runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_minecraft_version}-${curios_version}")
+    annotationProcessor 'org.spongepowered:mixin:0.8.4:processor'
+    //Example mod dependency using a mod jar from ./libs with a flat dir repository
+    // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
+    //The group id is ignored when searching -- in this case, it is "blank"
+    //implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
+
+    // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 }
 
+// This block of code expands all declared replace properties in the specified resource targets.
+// A missing property will result in an error. Properties are expanded using ${} Groovy notation.
+// When "copyIdeResources" is enabled, this will also run before the game launches in IDE environments.
+// See https://docs.gradle.org/current/dsl/org.gradle.language.jvm.tasks.ProcessResources.html
+tasks.named('processResources', ProcessResources).configure {
+    var replaceProperties = [
+            minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,
+            forge_version: forge_version, forge_version_range: forge_version_range,
+            loader_version_range: loader_version_range,
+            mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
+            mod_authors: mod_authors, mod_description: mod_description,
+    ]
+    inputs.properties replaceProperties
 
-
-// Example for how to get properties into the manifest for reading at runtime.
-jar {
-    manifest {
-        attributes([
-                "Specification-Title"     : "create_arcanus",
-                "Specification-Vendor"    : "create_arcanussareus",
-                "Specification-Version"   : "1", // We are version 1 of ourselves
-                "Implementation-Title"    : project.name,
-                "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "create_arcanussareus",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
-        ])
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
+        expand replaceProperties + [project: project]
     }
 }
 
-// Example configuration to allow publishing using the maven-publish plugin
-// This is the preferred method to reobfuscate your jar file
-jar.finalizedBy('reobfJar')
-// However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing
-// publish.dependsOn('reobfJar')
+// Example for how to get properties into the manifest for reading at runtime.
+tasks.named('jar', Jar).configure {
+    manifest {
+        attributes([
+                'Specification-Title'     : mod_id,
+                'Specification-Vendor'    : mod_authors,
+                'Specification-Version'   : '1', // We are version 1 of ourselves
+                'Implementation-Title'    : project.name,
+                'Implementation-Version'  : project.jar.archiveVersion,
+                'Implementation-Vendor'   : mod_authors,
+                'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
 
+    // This is the preferred method to reobfuscate your jar file
+    finalizedBy 'reobfJar'
+}
+
+// However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing:
+// tasks.named('publish').configure {
+//     dependsOn 'reobfJar'
+// }
+
+// Example configuration to allow publishing using the maven-publish plugin
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        register('mavenJava', MavenPublication) {
             artifact jar
         }
     }

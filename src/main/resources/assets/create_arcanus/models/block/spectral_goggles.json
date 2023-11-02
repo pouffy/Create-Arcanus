@@ -3,7 +3,7 @@
   "parent": "block/block",
   "textures": {
     "0": "forbidden_arcanus:block/arcane_gold_block",
-    "1": "block/redstone_block",
+    "1": "forbidden_arcanus:block/rune_block",
     "2": "create_arcanus:item/spectral_goggles_model",
     "particle": "forbidden_arcanus:block/arcane_gold_block"
   },
