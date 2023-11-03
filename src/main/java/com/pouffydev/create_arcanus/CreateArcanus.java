@@ -65,6 +65,8 @@ public class CreateArcanus
         registrate.registerEventListeners(modEventBus);
         CACreativeModeTabs.register(modEventBus);
         CAItems.register();
+        CABlocks.register();
+        CABlockEntities.register();
         
         modEventBus.addListener(EventPriority.LOWEST, CADatagen::gatherData);
         

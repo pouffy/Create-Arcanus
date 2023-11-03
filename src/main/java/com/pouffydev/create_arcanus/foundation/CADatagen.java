@@ -26,11 +26,10 @@ public class CADatagen {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         
-        //if (event.includeClient()) {
-        //    generator.addProvider(true, AllSoundEvents.provider(generator));
-        //}
-        
-        if (event.includeServer()) {
+        if (event.includeClient()) {
+            generator.addProvider(true, new CABlockModelGenerator(generator, existingFileHelper));
+        }
+        //if (event.includeServer()) {
             //GeneratedEntriesProvider generatedEntriesProvider = new GeneratedEntriesProvider(output, lookupProvider);
             //lookupProvider = generatedEntriesProvider.getRegistryProvider();
             //generator.addProvider(true, generatedEntriesProvider);
@@ -42,11 +41,10 @@ public class CADatagen {
             //generator.addProvider(true, new MechanicalCraftingRecipeGen(output));
             //generator.addProvider(true, new SequencedAssemblyRecipeGen(output));
             //ProcessingRecipeGen.registerAll(generator, output);
-        }
+        //}
     }
     private static void addExtraRegistrateData() {
         CreateRegistrateTags.addGenerators();
-        
         CreateArcanus.registrate.addDataGenerator(ProviderType.LANG, provider -> {
             BiConsumer<String, String> langConsumer = provider::add;
             
