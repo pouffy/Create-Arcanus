@@ -5,6 +5,8 @@
   "package": "com.pouffydev.create_arcanus.foundation.mixin",
   "refmap": "create_arcanus.refmap.json",
   "mixins": [
+    "HandleMagicCircleMixin",
+    "HephaestusForgeBlockEntityMixin"
   ],
   "client": [
   ],

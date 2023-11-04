@@ -1,8 +1,9 @@
 package com.pouffydev.create_arcanus.content.runes.activator;
 
+import com.pouffydev.create_arcanus.CABlockEntities;
 import com.pouffydev.create_arcanus.content.runes.RuneItem;
 import com.stal111.forbidden_arcanus.common.block.PedestalBlock;
-import com.stal111.forbidden_arcanus.core.init.ModBlockEntities;
+import com.stal111.forbidden_arcanus.common.block.properties.ModBlockStateProperties;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -27,6 +28,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
@@ -39,12 +41,16 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 public class ActivatorBlock extends Block implements SimpleWaterloggedBlock, EntityBlock {
-    private static final VoxelShape SHAPE = VoxelShapeHelper.combineAll(new VoxelShape[]{box(1.0, 0.0, 1.0, 15.0, 4.0, 15.0), box(3.0, 4.0, 3.0, 13.0, 6.0, 13.0), box(4.0, 6.0, 4.0, 12.0, 11.0, 12.0), box(2.0, 11.0, 2.0, 14.0, 14.0, 14.0)});
+    private static final VoxelShape SHAPE = VoxelShapeHelper.combineAll(box(1.0, 0.0, 1.0, 15.0, 4.0, 15.0), box(3.0, 4.0, 3.0, 13.0, 6.0, 13.0), box(4.0, 6.0, 4.0, 12.0, 11.0, 12.0), box(2.0, 11.0, 2.0, 14.0, 14.0, 14.0));
     public static final BooleanProperty WATERLOGGED;
-    public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
+    public static final BooleanProperty eastObelisk = BooleanProperty.create("east_obelisk");
+    public static final BooleanProperty westObelisk = BooleanProperty.create("west_obelisk");
+    public static final BooleanProperty northObelisk = BooleanProperty.create("north_obelisk");
+    public static final BooleanProperty southObelisk = BooleanProperty.create("south_obelisk");
+    public static final BooleanProperty ACTIVE = ModBlockStateProperties.ACTIVATED;
     public ActivatorBlock(BlockBehaviour.Properties properties) {
         super(properties);
-        this.registerDefaultState(this.getStateDefinition().any().setValue(WATERLOGGED, false).setValue(ACTIVE, false));
+        this.registerDefaultState(this.getStateDefinition().any().setValue(WATERLOGGED, false).setValue(ACTIVE, false).setValue(eastObelisk, false).setValue(westObelisk, false).setValue(northObelisk, false).setValue(southObelisk, false));
     }
     
     @Nonnull
@@ -54,7 +60,7 @@ public class ActivatorBlock extends Block implements SimpleWaterloggedBlock, Ent
     
     @Nullable
     public BlockEntity newBlockEntity(@Nonnull BlockPos pos, @Nonnull BlockState state) {
-        return new ActivatorBlockEntity(pos, state);
+        return new ActivatorBlockEntity(CABlockEntities.activator.get(), pos, state);
     }
     
     @Nullable
@@ -87,9 +93,9 @@ public class ActivatorBlock extends Block implements SimpleWaterloggedBlock, Ent
                     blockEntity.setStackAndSync(stack.copy().split(1));
                     ItemStackUtils.shrinkStack(player, stack);
                 }
-                
-                player.displayClientMessage(Component.translatable("create_arcanus.rune.invalid", stack.getHoverName()), true);
-                
+                if (!(stack.getItem() instanceof RuneItem)) {
+                    player.displayClientMessage(Component.translatable("create_arcanus.rune.invalid", stack.getHoverName()), true);
+                }
             }
             return InteractionResult.sidedSuccess(level.isClientSide);
     }
@@ -108,12 +114,16 @@ public class ActivatorBlock extends Block implements SimpleWaterloggedBlock, Ent
     }
     
     @Nullable
+    @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@Nonnull Level level, @Nonnull BlockState state, @Nonnull BlockEntityType<T> blockEntityType) {
-        return level.isClientSide() ? BaseEntityBlock.createTickerHelper(blockEntityType, (BlockEntityType) ModBlockEntities.PEDESTAL.get(), ActivatorBlockEntity::clientTick) : null;
+        if (level.isClientSide()) {
+            return BaseEntityBlock.createTickerHelper(blockEntityType, CABlockEntities.activator.get(), ActivatorBlockEntity::clientTick);
+        }
+        return BaseEntityBlock.createTickerHelper(blockEntityType, CABlockEntities.activator.get(), ActivatorBlockEntity::serverTick);
     }
     
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(WATERLOGGED, ACTIVE);
+        builder.add(WATERLOGGED, ACTIVE, eastObelisk, westObelisk, northObelisk, southObelisk);
     }
     
     @Nonnull

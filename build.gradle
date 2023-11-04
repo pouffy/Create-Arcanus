@@ -26,33 +26,21 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
-
-            // Recommended logging data for a userdev environment
+            arg '-mixin.config=create_arcanus.mixins.json'
             property 'forge.logging.markers', 'REGISTRIES'
-
-            // Recommended logging level for the console
-            property 'forge.logging.console.level', 'debug'
-
-            arg "-mixin.config=create_arcanus.mixins.json"
-
+            property 'forge.enabledGameTestNamespaces', 'create_arcanus'
             mods {
                 create_arcanus {
                     source sourceSets.main
                 }
             }
         }
-
         server {
             workingDirectory project.file('run')
-
-            // Recommended logging data for a userdev environment
+            arg '-mixin.config=create_arcanus.mixins.json'
             property 'forge.logging.markers', 'REGISTRIES'
-
-            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
-
-            arg "-mixin.config=create_arcanus.mixins.json"
-
+            property 'forge.enabledGameTestNamespaces', 'create_arcanus'
             mods {
                 create_arcanus {
                     source sourceSets.main
@@ -62,18 +50,12 @@ minecraft {
 
         data {
             workingDirectory project.file('run')
-
-            // Recommended logging data for a userdev environment
             property 'forge.logging.markers', 'REGISTRIES'
-
-            // Recommended logging level for the console
             property 'forge.logging.console.level', 'debug'
-
             args '--mod', 'create_arcanus', '--all',
                     '--output', file('src/generated/resources/'),
                     '--existing', file('src/main/resources/').toString(),
                     '--existing', file('src/generated/resources').toString()
-
             mods {
                 create_arcanus {
                     source sourceSets.main
@@ -130,23 +112,9 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-${jei_minecraft_version}-forge-api:${jei_version}")
     implementation fg.deobf("mezz.jei:jei-${jei_minecraft_version}-forge:${jei_version}")
 
-    //compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_minecraft_version}-${curios_version}:api")
-    //runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_minecraft_version}-${curios_version}")
     annotationProcessor 'org.spongepowered:mixin:0.8.4:processor'
-    //Example mod dependency using a mod jar from ./libs with a flat dir repository
-    // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
-    //The group id is ignored when searching -- in this case, it is "blank"
-    //implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
-
-    // For more info:
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
 }
 
-// This block of code expands all declared replace properties in the specified resource targets.
-// A missing property will result in an error. Properties are expanded using ${} Groovy notation.
-// When "copyIdeResources" is enabled, this will also run before the game launches in IDE environments.
-// See https://docs.gradle.org/current/dsl/org.gradle.language.jvm.tasks.ProcessResources.html
 tasks.named('processResources', ProcessResources).configure {
     var replaceProperties = [
             minecraft_version: minecraft_version, minecraft_version_range: minecraft_version_range,

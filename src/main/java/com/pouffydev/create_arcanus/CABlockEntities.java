@@ -4,6 +4,8 @@ import com.pouffydev.create_arcanus.content.aureal.battery.BatteryBlockEntity;
 import com.pouffydev.create_arcanus.content.aureal.battery.BatteryRenderer;
 import com.pouffydev.create_arcanus.content.aureal.battery.CreativeBatteryBlockEntity;
 import com.pouffydev.create_arcanus.content.aureal.cable.CableBlockEntity;
+import com.pouffydev.create_arcanus.content.runes.activator.ActivatorBlockEntity;
+import com.pouffydev.create_arcanus.content.runes.activator.ActivatorRenderer;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 
 import static com.pouffydev.create_arcanus.CreateArcanus.registrate;
@@ -30,6 +32,12 @@ public class CABlockEntities {
             .blockEntity("creative_aureal_battery", CreativeBatteryBlockEntity::new)
             .validBlocks(CABlocks.creativeAurealBattery)
             .renderer(() -> BatteryRenderer::new)
+            .register();
+    
+    public static final BlockEntityEntry<ActivatorBlockEntity> activator = registrate
+            .blockEntity("activator", ActivatorBlockEntity::new)
+            .validBlocks(CABlocks.activator)
+            .renderer(() -> ActivatorRenderer::new)
             .register();
     
     public static void register() {}

@@ -1,3 +1,19 @@
 {
-  "create_arcanus.rune.invalid": "%s is not a valid rune."
+  "create_arcanus.rune.invalid": "%s is not a valid rune.",
+  "item.create_arcanus.rune": "Rune",
+  "tooltip.create_arcanus.rune_type.area_effect": "Area Effect",
+  "tooltip.create_arcanus.rune_type.entity_attract": "Entity Attract",
+  "tooltip.create_arcanus.rune_radius": "Effect Radius: %s",
+  "tooltip.create_arcanus.rune_mob_effect": "Mob Effect:",
+  "tooltip.create_arcanus.rune_affects_entity": "Affects Entity:",
+  "tooltip.create_arcanus.rune_only_players": "Only Affects Players",
+
+  "create_arcanus.gui.goggles.hephaestus_forge": "Hephaestus Forge Info:",
+  "create_arcanus.gui.goggles.aureal": "Aureal:",
+  "create_arcanus.gui.goggles.souls": "Souls:",
+  "create_arcanus.gui.goggles.blood": "Blood:",
+  "create_arcanus.gui.goggles.experience": "Experience:",
+
+  "create_arcanus.gui.goggles.valid_ritual": "Valid Ritual",
+  "create_arcanus.gui.goggles.invalid_ritual": "Invalid Ritual"
 }
